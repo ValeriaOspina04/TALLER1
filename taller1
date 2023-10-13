@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char c_Producto[11];
+    char c_Almacen[6];
+
+    while (1) {
+        printf("Ingrese el codigo del producto: ");
+        scanf("%s", c_Producto);
+
+        printf("Ingrese el codigo del almacen que empieza con 20: ");
+        scanf("%s", c_Almacen);
+
+        if (strlen(c_Producto) == 10 && strncmp(c_Almacen, "20", 2) == 0) {
+            break;
+        }
+
+        printf("los codigos no son validos\n");
+    }
+
+    if (strcmp(c_Producto, "8949899430") == 0 ||
+        strcmp(c_Producto, "7653512593") == 0 ||
+        strcmp(c_Producto, "9383867373") == 0 ||
+        strcmp(c_Producto, "88392904209") == 0) {
+        printf("!!!se te ha aplicado un descuento del 20%!!!\n");
+    } else {
+        printf("tu producto no tiene descuento\n");
+    }
+
+    if (strcmp(c_Producto, "8949859430") == 0 &&
+        strcmp(c_Almacen, "20763") == 0) {
+        printf("¡tu codigo participa en la rifa de un vehiculo, felicidades!\n");
+    } else if (strcmp(c_Producto, "1653312593") == 0 &&
+               strcmp(c_Almacen, "20221") == 0) {
+        printf("¡tu codigo participa en la rifa de un vehiculo, felicidades!\n");
+    } else if (strcmp(c_Producto, "2483867373") == 0 &&
+               strcmp(c_Almacen, "20130") == 0) {
+        printf("¡tu codigo participa en la rifa de un vehiculo, felicidades!\n");
+    } else if (strcmp(c_Producto, "1839230922") == 0 &&
+               strcmp(c_Almacen, "20561") == 0) {
+        printf("¡tu codigo participa en la rifa de un vehiculo, felicidades!\n");
+    } else {
+        printf("No participas en la rifa del vehiculo\n");
+    }
+
+    printf("codigos validos.\n");
+
+    return 0;
+}
